@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="header">
+    <h2>🚗 Vehicle Data Extractor</h2>
+  </div>
+
+  <div class="control-panel">
+    <div class="input-group">
+      <label>Concurrency (Max 5)</label>
+      <input type="number" id="concurrency" value="3" min="1" max="5">
+    </div>
+    <div class="btn-group">
+      <button id="startBtn">▶ Start</button>
+      <button id="stopBtn" disabled>⏹ Stop</button>
+    </div>
+  </div>
+
+  <div class="progress-section">
+    <div class="progress-info">
+      <span id="pageCount">Pages: 0</span>
+      <span id="rowCount">Rows: 0</span>
+    </div>
+    <div class="progress-bar-container">
+      <div id="progressBar"></div>
+    </div>
+  </div>
+
+  <div class="console-section">
+    <label>📋 Live Console</label>
+    <div id="console"></div>
+  </div>
+
+  <div class="preview-section">
+    <label>👀 Data Preview (Latest)</label>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Vehicle No</th>
+            <th>Model</th>
+            <th>Hub</th>
+          </tr>
+        </thead>
+        <tbody id="previewBody">
+          <tr><td colspan="3" style="text-align:center;">No data yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <button id="downloadBtn" disabled>⬇ Download CSV</button>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>

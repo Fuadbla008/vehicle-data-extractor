@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Vehicle Data Extractor",
+  "version": "2.0",
+  "description": "Extract vehicle data with auto pagination and concurrent fetching.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://dash.packzy.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open Vehicle Data Extractor"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://dash.packzy.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
