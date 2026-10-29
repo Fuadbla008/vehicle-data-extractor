@@ -42,7 +42,7 @@ function updatePreview() {
 
 //page pagination a bike er jonno link change korte hbe ?page=
 async function fetchPage(page) {
-  const url = `${BASE_URL}page=${page}`;
+  const url = `${BASE_URL}?page=${page}`;
   try {
     const response = await fetch(url, {
       credentials: "include",
