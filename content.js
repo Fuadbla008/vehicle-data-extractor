@@ -1,6 +1,11 @@
 let isScraping = false;
 let allScrapedData = [];
 
+
+//all bike er jonno link https://dash.packzy.com/admin/fleet/vehicles?vehicle_type=2&
+
+
+//all coverd van er jonno link https://dash.packzy.com/admin/fleet/vehicles
 const BASE_URL = "https://dash.packzy.com/admin/fleet/vehicles";
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -34,8 +39,10 @@ function updatePreview() {
   chrome.runtime.sendMessage({ action: "PREVIEW", data: allScrapedData.slice(-5) });
 }
 
+
+//page pagination a bike er jonno link change korte hbe ?page=
 async function fetchPage(page) {
-  const url = `${BASE_URL}?page=${page}`;
+  const url = `${BASE_URL}page=${page}`;
   try {
     const response = await fetch(url, {
       credentials: "include",
